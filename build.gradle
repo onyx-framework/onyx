@@ -28,6 +28,8 @@ allprojects {
         compile "junit:junit:$junitVersion"
 
         testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
+
+        testCompile project(':engine')
     }
 
     idea {
