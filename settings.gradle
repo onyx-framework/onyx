@@ -1,0 +1,4 @@
+rootProject.name = 'onyx'
+
+include ':engine'
+include ':setup'
