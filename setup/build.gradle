@@ -1,16 +1,1 @@
 description = "Creates default server requirements."
-
-tasks.register("setup") {
-    description = "Run setup wizard."
-
-    group = "onyx"
-
-    doFirst {
-        javaexec {
-            workingDir = rootProject.projectDir
-            classpath = sourceSets.main.runtimeClasspath
-            main = "onyx.setup.Setup"
-            args = []
-        }
-    }
-}
