@@ -8,6 +8,7 @@ allprojects {
 
     apply plugin: 'idea'
     apply plugin: 'org.jetbrains.kotlin.jvm'
+    apply plugin: 'jacoco'
 
     group 'onyx'
     version '1.0'
@@ -54,4 +55,13 @@ allprojects {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            html.enabled false
+        }
+    }
+
+    check.dependsOn jacocoTestReport
 }

@@ -15,3 +15,7 @@ cache:
 script:
   - ./gradlew test
   - ./gradlew build
+  - ./gradlew clean check
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
