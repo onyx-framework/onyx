@@ -26,11 +26,16 @@ allprojects {
     dependencies {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
         ktlint "com.pintrest:ktlint:$ktlintVersion"
+
         compile "junit:junit:$junitVersion"
+        compile "io.github.microutils:kotlin-logging:$kloggingVersion"
+        compile "org.slf4j:slf4j-api:$slf4jVersion"
+        compile "org.slf4j:slf4j-log4j12:$log4jVersion"
 
         testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
 
         testCompile project(':engine')
+        testCompile project(':setup')
     }
 
     idea {

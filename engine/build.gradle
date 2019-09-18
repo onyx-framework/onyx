@@ -10,16 +10,22 @@ mainClassName = "onyx.engine.Onyx"
 
 run {
     workingDir = rootProject.projectDir
+    description = "Runs the server."
+    group = "onyx"
 }
 
 dependencies {
+    compile project(':setup')
+
     compile "io.netty:netty-all:$nettyVersion"
-    compile "io.github.microutils:kotlin-logging:$kloggingVersion"
-    compile "org.slf4j:slf4j-api:$slf4jVersion"
-    compile "org.slf4j:slf4j-log4j12:$log4jVersion"
 }
 
 shadowJar {
     //noinspection GrDeprecatedAPIUsage
     classifier = ""
+}
+
+task packageJar(dependsOn: shadowJar) {
+    description = "Packages server executable jar."
+    group = "onyx"
 }
