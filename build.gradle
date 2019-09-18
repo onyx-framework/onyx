@@ -40,6 +40,14 @@ allprojects {
         }
     }
 
+    sourceSets {
+        main.kotlin.srcDirs = ['src/main/kotlin']
+        main.resources.srcDirs = ['src/main/resources']
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
     compileKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
